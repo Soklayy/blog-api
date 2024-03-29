@@ -64,7 +64,7 @@ if (APP_ENV === 'dev') {
     entities: [join(__dirname + './../**/**.entity{.ts,.js}')]
   })
 } else if (APP_ENV === 'prod') {
-  new DataSource({
+  dataSource = new DataSource({
     type: databaseType,
     url: configService.get<string>('DATABASE_URL'),
     entities: [__dirname + './../**/**.entity{.ts,.js}'],
