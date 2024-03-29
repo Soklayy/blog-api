@@ -67,7 +67,7 @@ if (APP_ENV === 'dev') {
   dataSource = new DataSource({
     type: databaseType,
     url: configService.get<string>('DATABASE_URL'),
-    entities: [__dirname + './../**/**.entity{.ts,.js}'],
+    entities: [join(__dirname + './../**/**.entity{.ts,.js}')],
     migrations: [join(__dirname, '../db/migrations/**{.ts,.js}')],
     synchronize: false,
     migrationsRun: true,
